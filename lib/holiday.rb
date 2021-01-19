@@ -83,12 +83,11 @@ def all_holidays_with_bbq(holiday_hash)
   holiday_array = Array.new
   holiday_hash.each do |season, holiday|
     holiday.each do |event, supplies|
+      #if BBQ found, store event into holiday_array
       if supplies.any?("BBQ")
         holiday_array << event
       end
     end
   end
-  holiday_array
-  #binding.pry
-
+  holiday_array  #returns holiday array
 end
