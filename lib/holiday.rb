@@ -62,18 +62,17 @@ def all_supplies_in_holidays(holiday_hash)
     puts "#{season.to_s.capitalize}:"
     holiday.each do |event, supplies|
       #Format season
-      format_season = event.to_s.split("_")
-      format_season = format_season.map do |x|
+      format_season = event.to_s.split("_")  #splits names into array at the "_"
+      format_season = format_season.map do |x|  # capitalize each word in the array
         x.capitalize
       end
-      format_season = format_season.join(" ")
+      format_season = format_season.join(" ") #join holiday words back together with a " " in between
 
       #format supplies
-      format_supplies = supplies.join(", ")
+      format_supplies = supplies.join(", ")  #join supply array into correct format
 
       #puts final format_supplies
       puts "  #{format_season}: #{format_supplies}"
-      #binding.pry
     end
   end
 end
